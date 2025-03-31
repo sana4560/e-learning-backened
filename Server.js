@@ -27,8 +27,7 @@ app.use(cors({
 }));
 
 // MongoDB Connection
-const mongoURI = 'mongodb://127.0.0.1:27017/tutors';
-
+const mongoURI = process.env.MONGO_URI;
 mongoose.connect(mongoURI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(error => {
